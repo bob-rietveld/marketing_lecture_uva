@@ -45,8 +45,15 @@
 
     <!-- SLIDES -->
     <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Notes</h2>
+  </hgroup>
   <article data-timings="">
-    
+    <ul>
+<li>Ask!</li>
+<li>Slides &amp; code are available at <a href="http://good-marketing.github.io/marketing_lecture_uva">on GitHub</a></li>
+</ul>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -1082,81 +1089,13 @@ Ph.D. candidate in econometrics at Erasmus University Rotterdam in the Netherlan
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-49" style="background:;">
-  <hgroup>
-    <h2>The end</h2>
-  </hgroup>
-  <article data-timings="">
-     
-<div class='row-fluid'>
-  <div class='span5'>
-    <form id="knitForm49" data-cell="49">
-      <p><textarea class='interactive' id='interactive49' data-cell='49' data-results='asis' style='display:none'># Get complete series
-library(rlist)
-library(pipeR)
-library(httr)
-library(ggplot2)
-library(RDetect)
-library(dplyr)</p>
-
-<h1>Call the api data</h1>
-
-<p>hedonometer &lt;- httr::GET(&quot;<a href="http://hedonometer.org/api/v1/timeseries/?format=json&amp;offset=466%22">http://hedonometer.org/api/v1/timeseries/?format=json&amp;offset=466&quot;</a>)</p>
-
-<h1>Extract the json content</h1>
-
-<p>json &lt;- content(hedonometer)$objects</p>
-
-<h1>Convert Json into two colum data table with a date and numeric value</h1>
-
-<p>data  &lt;-     list.filter(json, lang  == &quot;english&quot;) %&gt;&gt;%
-             list.select(
-                      as.POSIXct(date),
-                      as.numeric(happiness))  %&gt;&gt;%
-             list.stack()</p>
-
-<h1>Call the graph function</h1>
-
-<p>result &lt;- detect_anon_break(data)</textarea></p>
-
-      <div id='aceeditor49' style="height:px;"></div>
-      <div class='interactive btn-toolbar pull-left'>
-        <div class='btn-group'>
-          <a class='btn btn-small action-button' id='runCode49' data-action='runCode'
-            data-cell='49' rel='tooltip' data-title='Run Code'>
-            <i class='icon-play'></i>
-          </a>
-          <a class='btn btn-small iBtn' id='testCode49' data-action='testCode'
-             data-cell='49' rel='tooltip' data-title='Test Code'>
-            <i class='icon-check'></i>
-          </a>
-          <a class='btn btn-small iBtn' id='clearResult49' data-action='clearResult'
-             data-cell='49' rel='tooltip' data-title='Clear Output'>
-            <i class="icon-remove"></i>
-          </a>
-          <a class='btn  btn-small iBtn' id='getHint49' rel='tooltip' 
-            data-title="Get Hint" data-action='getHint'
-            data-cell='49' data-hint="">
-            <i class="icon-bookmark"></i>
-          </a>
-        </div>
-      </div>    </form>
-  </div>
-  <div class='span7'>
-    <div id="knitResult49" class='shiny-html-output'></div>
-  </div>
-</div>
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
     <slide class="backdrop"></slide>
   </slides>
   <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
     <ul>
       <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=1 title=''>
+        data-slide=1 title='Notes'>
          1
       </a>
     </li>
@@ -1440,12 +1379,6 @@ library(dplyr)</p>
       <a href="#" target="_self" rel='tooltip' 
         data-slide=48 title='Blue Pill or Red Pill'>
          48
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=49 title='The end'>
-         49
       </a>
     </li>
   </ul>

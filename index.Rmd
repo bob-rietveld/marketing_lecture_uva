@@ -10,6 +10,11 @@ widgets     : [bootstrap, quiz, shiny, interactive]            # {mathjax, quiz,
 mode        : selfcontained # {standalone, draft}
 ---
 
+## Notes
+
+* Ask!
+* Slides & code are available at [on GitHub]( http://good-marketing.github.io/marketing_lecture_uva)
+
 --- &twocol
 
 ## About Me / Oxyme
@@ -705,33 +710,3 @@ Kevin Kelly
 
 <iframe width="100%" height="90%" src="https://www.youtube.com/embed/RhlXqYiTz2Q" frameborder="0" allowfullscreen></iframe>
 
---- &interactive
-
-## The end
-
-
-```{r opts.label = 'interactive', results = 'asis' , warning=FALSE, comment=NA} 
-# Get complete series
-library(rlist)
-library(pipeR)
-library(httr)
-library(ggplot2)
-library(RDetect)
-library(dplyr)
-
-# Call the api data
-hedonometer <- httr::GET("http://hedonometer.org/api/v1/timeseries/?format=json&offset=466")
-# Extract the json content
-json <- content(hedonometer)$objects
-# Convert Json into two colum data table with a date and numeric value
-data  <-     list.filter(json, lang  == "english") %>>%
-             list.select(
-                      as.POSIXct(date),
-                      as.numeric(happiness))  %>>%
-             list.stack()
-
-
-# Call the graph function
-result <- detect_anon_break(data)
-
-```
